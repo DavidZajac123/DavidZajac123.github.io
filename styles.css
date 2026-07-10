@@ -1,0 +1,210 @@
+/* =========================================================
+   Portfolio styles — tweak colors/spacing here.
+   Design tokens are declared as CSS variables at the top.
+   ========================================================= */
+
+:root {
+  --bg: #0f1220;
+  --panel: #171a2e;
+  --text: #e8ebf5;
+  --muted: #9aa3b8;
+  --accent: #7c9cff;
+  --accent-soft: rgba(124, 156, 255, 0.15);
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 12px;
+  --max-width: 960px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- Layout --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(15, 18, 32, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+nav .brand { font-weight: 600; }
+nav ul { display: flex; gap: 24px; list-style: none; }
+nav ul a { color: var(--muted); font-size: 0.95rem; }
+nav ul a:hover { color: var(--text); text-decoration: none; }
+
+section { padding: 80px 0; }
+section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+/* --- Hero --- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 100px 0 80px;
+}
+.hero img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-soft);
+  flex-shrink: 0;
+  cursor: zoom-in;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.hero img:hover { transform: scale(1.03); border-color: var(--accent); }
+
+/* Fullscreen photo viewer, dismissed by click or Escape. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: zoom-out;
+  animation: fadeIn 0.15s ease;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.hero h1 { font-size: 2.5rem; margin-bottom: 8px; }
+.hero .tagline { color: var(--accent); margin-bottom: 16px; font-size: 1.1rem; }
+.hero p { color: var(--muted); max-width: 600px; }
+
+@media (max-width: 640px) {
+  .hero { flex-direction: column; text-align: center; padding-top: 60px; }
+  .hero h1 { font-size: 2rem; }
+}
+
+/* --- Cards --- */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.card h3 { margin-bottom: 4px; }
+.card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
+.card ul { margin-left: 20px; color: var(--muted); }
+
+/* --- Projects --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.project .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+.tag {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* --- Skills --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.skill-block h4 {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+/* --- Contact --- */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.contact-links a {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  color: var(--text);
+}
+.contact-links a:hover { border-color: var(--accent); text-decoration: none; }
+.contact-static {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+/* Certifications rendered as a readable list rather than pill tags,
+   since the strings are too long to sit nicely on one line. */
+.cert-block { grid-column: 1 / -1; }
+.cert-list {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+.cert-list li {
+  color: var(--muted);
+  padding-left: 18px;
+  position: relative;
+}
+.cert-list li::before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: 4px;
+}
+
+footer {
+  padding: 32px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
