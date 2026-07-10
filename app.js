@@ -92,11 +92,16 @@ skillsGrid.appendChild(certBlock);
 
 // --- Contact ---
 const links = $("contact-links");
-const { github, linkedin, email, phone } = portfolio.social;
+const { github, linkedin, email } = portfolio.social;
 if (email) links.appendChild(Object.assign(document.createElement("a"), { href: `mailto:${email}`, textContent: `✉ ${email}` }));
 if (github) links.appendChild(Object.assign(document.createElement("a"), { href: github, target: "_blank", rel: "noopener", textContent: "GitHub" }));
 if (linkedin) links.appendChild(Object.assign(document.createElement("a"), { href: linkedin, target: "_blank", rel: "noopener", textContent: "LinkedIn" }));
-if (phone) links.appendChild(Object.assign(document.createElement("span"), { className: "contact-static", textContent: `☎ ${phone}` }));
+if (portfolio.resume) links.appendChild(Object.assign(document.createElement("a"), {
+  href: encodeURI(portfolio.resume),
+  download: "",
+  className: "resume-btn",
+  textContent: "↓ Download Résumé"
+}));
 
 // --- Footer ---
 $("footer-text").textContent = `© ${new Date().getFullYear()} ${portfolio.name} • ${portfolio.location}`;

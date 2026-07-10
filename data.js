@@ -16,9 +16,11 @@ const portfolio = {
   social: {
     github: "https://github.com/DavidZajac123",
     linkedin: "https://www.linkedin.com/in/david-zajac-393554360/",
-    email: "dzajac2705@gmail.com",
-    phone: "(437) 878-3289"
+    email: "dzajac2705@gmail.com"
   },
+
+  // Path to the résumé file offered via the download button in Contact.
+  resume: "David Zajac Resume (1).pdf",
 
   // Add new projects by copying a block and editing the fields.
   projects: [

@@ -13,6 +13,8 @@
   --border: rgba(255, 255, 255, 0.08);
   --radius: 12px;
   --max-width: 960px;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Sora", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,11 +22,18 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Headings and the brand mark use the display face for a more
+   polished, professional feel. */
+h1, h2, h3, h4, nav .brand {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -56,6 +65,8 @@ nav .brand { font-weight: 600; }
 nav ul { display: flex; gap: 24px; list-style: none; }
 nav ul a { color: var(--muted); font-size: 0.95rem; }
 nav ul a:hover { color: var(--text); text-decoration: none; }
+nav ul a.nav-github { color: var(--accent); font-weight: 600; }
+nav ul a.nav-github:hover { color: var(--accent); text-decoration: underline; }
 
 section { padding: 80px 0; }
 section h2 {
@@ -179,6 +190,19 @@ section h2 {
   padding: 10px 18px;
   border-radius: var(--radius);
   color: var(--text);
+}
+
+/* Accented call-to-action for the résumé download. */
+.resume-btn {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+.resume-btn:hover {
+  background: transparent;
+  color: var(--accent);
+  text-decoration: none;
 }
 
 /* Certifications rendered as a readable list rather than pill tags,

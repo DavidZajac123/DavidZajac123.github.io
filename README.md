@@ -1,29 +1,36 @@
-# Personal Portfolio
+# David Zajac — Personal Portfolio
 
-Single-page portfolio site — plain HTML/CSS/JS, no build step.
+Personal portfolio site for **David Zajac**, a 3rd-year Computer Science student
+at Ontario Tech University (Data Science specialization), based in Toronto, Ontario.
 
-## Files
+🔗 **Live site:** https://davidzajac123.github.io/
 
-- `index.html` — page structure (rarely needs editing)
-- `styles.css` — visual design; CSS variables at the top control colors/spacing
-- `data.js` — **all site content lives here** (bio, projects, education, etc.)
-- `app.js` — renders `data.js` into the page (rarely needs editing)
-- `IMG_0909.jpg` — profile photo
+## About
 
-## How to update content
+I'm a Computer Science student passionate about building software that's clean,
+useful, and thoughtfully designed. I enjoy working with Python, Java, and C++,
+and I'm always looking for new problems to solve.
 
-Open `data.js` and edit the field you want to change. To add a project, copy an existing block in the `projects` array and edit it.
+- 🎓 BSc. Honours Computer Science, Data Science Specialization (in progress)
+- 💻 Languages: Python, Java, C++
+- 📍 Toronto, Ontario
 
-## How to run locally
+## Featured Projects
 
-Just open `index.html` in a browser, or serve the folder:
+- **[ReelRater](https://github.com/DavidZajac123/SoftwareDesignAndAnalysisReelRaterProject)** —
+  A full-stack movie discovery and tracking web app (React, TypeScript, Node.js,
+  Express) with user authentication, social recommendations, and a full test suite.
+- **[Pokémon Base Stats Analysis](https://github.com/DavidZajac123/pokemon-base-stats-analysis)** —
+  Exploratory data analysis of how Pokémon base stats have evolved across
+  Generations I–IX, using pandas, matplotlib, and seaborn.
 
-```powershell
-python -m http.server 8000
-```
+## Connect
 
-Then visit http://localhost:8000
+- **GitHub:** [DavidZajac123](https://github.com/DavidZajac123)
+- **LinkedIn:** [david-zajac](https://www.linkedin.com/in/david-zajac-393554360/)
+- **Email:** dzajac2705@gmail.com
 
-## How to deploy
+## About this repository
 
-Any static host works — GitHub Pages, Netlify, Vercel, Cloudflare Pages. Just upload the folder.
+A single-page static site — plain HTML/CSS/JS, no build step. All content lives in
+`data.js`; open `index.html` in a browser to view it locally.
