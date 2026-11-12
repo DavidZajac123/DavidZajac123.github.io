@@ -77,7 +77,7 @@ const portfolio = {
   ],
 
   skills: {
-    languages: ["Python", "Java", "C++"],
+    languages: ["Python", "Java", "C++", "JavaScript"],
     tools: ["Microsoft Office", "Google Suite"],
     traits: ["Organized", "Proactive", "Punctual", "Efficient"]
   },
